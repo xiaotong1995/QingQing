@@ -1,0 +1,28 @@
+name: C Program Runner
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-run-c:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install GCC
+      run: sudo apt-get update && sudo apt-get install build-essential
+
+    - name: Compile C program
+      run: gcc -o myprogram myprogram.c
+
+    - name: Run C program
+      run: ./myprogram > output.txt
+      shell: bash
+
+    - name: Upload Result as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: c-program-output
+        path: output.txt
