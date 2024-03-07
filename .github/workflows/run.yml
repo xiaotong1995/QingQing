@@ -15,10 +15,10 @@ jobs:
       run: sudo apt-get update && sudo apt-get install build-essential
 
     - name: Compile C program
-      run: gcc -o myprogram sha256.c
+      run: gcc -o test test.c
 
     - name: Run C program
-      run: ./sha256 > output.txt
+      run: ./test > output.txt
       shell: bash
 
     - name: Upload Result as Artifact
