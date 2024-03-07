@@ -15,7 +15,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install build-essential
 
     - name: Compile C program
-      run: gcc -o test test.c
+      run: gcc -o test test.c -lcrypto -Wno-deprecated-declarations
 
     - name: Run C program
       run: ./test > output.txt
