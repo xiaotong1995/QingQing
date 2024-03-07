@@ -28,7 +28,6 @@ jobs:
         path: output.txt
     - name: 提交更改
       run: |
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           git config --local user.email "pantong1995@126.com"
           git config --local user.name “xiaotong1995”
           git add .
