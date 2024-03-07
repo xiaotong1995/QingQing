@@ -36,4 +36,5 @@ jobs:
           git add .
           git commit *.txt -m "Add generated file"
           #git pull --rebase
-          git push -f  
+          #git push -f  
+          git push origin main --force
