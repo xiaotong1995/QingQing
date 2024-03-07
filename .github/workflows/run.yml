@@ -26,3 +26,11 @@ jobs:
       with:
         name: c-program-output
         path: output.txt
+    - name: 提交更改
+      run: |
+          git config --local user.email "pantong1995@126.com"
+          git config --local user.name "xiaotong1995"
+          git add .
+          git commit *.txt -m "Add generated file"
+          #git pull --rebase
+          git push -f  
